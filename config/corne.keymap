@@ -16,11 +16,6 @@
 #define MSE 5
 #define MED 6
 
-&lt {
-	tapping-term-ms = <300>;
-	flavor = "hold-preferred";
-	};
-
 behaviors {
 	hmi: homerow_mods_index {
 		compatible = "zmk,behavior-hold-tap";
