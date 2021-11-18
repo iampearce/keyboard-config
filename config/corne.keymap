@@ -22,7 +22,6 @@
 	flavor = "hold-preferred";
 	};
 
-behaviors {
 	hmi: homerow_mods_index {
 		compatible = "zmk,behavior-hold-tap";
 		label = "HOMEROW_MODS_INDEX";
@@ -41,7 +40,7 @@ behaviors {
 		flavor = "tap-preferred";
 		bindings = <&kp>, <&kp>;
 		};
-	};
+	
 / {
         keymap {
                 compatible = "zmk,keymap";
