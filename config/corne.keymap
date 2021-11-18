@@ -48,57 +48,57 @@ behaviors {
 
 default_layer {
 		bindings = <
-		&none       &kp Q       &kp W       &kp F        &kp P        &kp B           &kp J     &kp L        &kp U            &kp Y          &hmr DQT SQT       &none
-		&none       &hmr LGUI A &hmr LALT R &hmi LCTRL S &hmi LSHFT T &kp G           &kp M     &hmi RSHFT N &hmi RCTRL E     &hmr LALT I    &hmr RGUI O        &none
-		&none       &kp Z       &kp X       &kp C        &kp D        &kp V           &kp K     &kp H        &hmi EXCL COMMA  &hmr QMARK DOT &hmr COLON SEMI    &none
+		&trans       &kp Q       &kp W       &kp F        &kp P        &kp B           &kp J     &kp L        &kp U            &kp Y          &hmr DQT SQT       &trans
+		&trans       &hmr LGUI A &hmr LALT R &hmi LCTRL S &hmi LSHFT T &kp G           &kp M     &hmi RSHFT N &hmi RCTRL E     &hmr LALT I    &hmr RGUI O        &trans
+		&trans       &kp Z       &kp X       &kp C        &kp D        &kp V           &kp K     &kp H        &hmi EXCL COMMA  &hmr QMARK DOT &hmr COLON SEMI    &trans
 		                        &lt MSE TAB   &lt FUN RET  &lt NUM SPACE             &lt SYM BSPC   &lt MED ESC  &lt NAV DEL
 		>;
 	};
 	num_layer {
 		bindings = <
-		&none       &hmr GRAVE TILDE &kp N7    &kp N8    &kp N9    &kp COMMA        &trans     &trans     &trans    &trans   &reset     &none
-		&none       &kp NON_US_HASH  &kp N4    &kp N5    &kp N6    &kp N0           &trans     &kp RSHFT  &kp RCTRL &kp LALT &kp RGUI   &none
-		&none       &hmr HASH PRCNT  &kp N1    &kp N2    &kp N3    &kp DOT          &trans     &trans     &trans    &trans   &trans     &none
+		&trans       &hmr GRAVE TILDE &kp N7    &kp N8    &kp N9    &kp COMMA        &trans     &trans     &trans    &trans   &reset     &trans
+		&trans       &kp NON_US_HASH  &kp N4    &kp N5    &kp N6    &kp N0           &trans     &kp RSHFT  &kp RCTRL &kp LALT &kp RGUI   &trans
+		&trans       &hmr HASH PRCNT  &kp N1    &kp N2    &kp N3    &kp DOT          &trans     &trans     &trans    &trans   &trans     &trans
 		                                       &trans    &trans    &trans           &trans     &trans     &trans
 		>;
 	};
 	sym_layer {
 		bindings = <
-		&none       &reset     &trans     &trans     &trans     &trans             &kp PLUS   &hmi LBRC LBKT &hmi CARET STAR &hmr RBRC RBKT &kp AT      &none
-		&none       &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &trans             &kp UNDER  &kp LPAR       &kp EQUAL       &kp RPAR       &kp DLLR    &none
-		&none       &trans     &trans     &trans     &trans     &trans             &kp MINUS  &kp LT         &hmi BSLH FSLH  &kp GT         &kp AMPS    &none
+		&trans       &reset     &trans     &trans     &trans     &trans             &kp PLUS   &hmi LBRC LBKT &hmi CARET STAR &hmr RBRC RBKT &kp AT      &trans
+		&trans       &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &trans             &kp UNDER  &kp LPAR       &kp EQUAL       &kp RPAR       &kp DLLR    &trans
+		&trans       &trans     &trans     &trans     &trans     &trans             &kp MINUS  &kp LT         &hmi BSLH FSLH  &kp GT         &kp AMPS    &trans
 		                                  &trans     &trans     &trans             &trans     &trans         &trans
 		>;
 	};
 	fun_layer {
 		bindings = <
-		&none       &kp F12    &kp F7     &kp F8     &kp F9     &trans             &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4     &none
-		&none       &kp F11    &kp F4     &kp F5     &kp F6     &trans             &trans       &kp RSHFT    &kp RCTRL    &kp LALT     &kp RGUI         &none
-		&none       &kp F10    &kp F1     &kp F2     &kp F3     &trans             &trans       &trans       &trans       &trans       &trans           &none
+		&trans       &kp F12    &kp F7     &kp F8     &kp F9     &trans             &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4     &trans
+		&trans       &kp F11    &kp F4     &kp F5     &kp F6     &trans             &trans       &kp RSHFT    &kp RCTRL    &kp LALT     &kp RGUI         &trans
+		&trans       &kp F10    &kp F1     &kp F2     &kp F3     &trans             &trans       &trans       &trans       &trans       &trans           &trans
 		                                  &trans     &trans     &trans             &trans       &trans       &bt BT_CLR
 		>;
 	};
 	nav_layer {
 		bindings = <
-		&none       &trans     &trans     &trans     &trans     &trans             &trans     &kp LC(LEFT)     &kp LC(DOWN)      &kp LC(UP)      &kp LC(RIGHT)  &none
-		&none       &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &trans             &trans     &kp LEFT         &kp DOWN          &kp UP          &kp RIGHT      &none
-		&none       &kp LC(Z)  &kp LC(X)  &kp LC(C)  &trans     &kp LC(V)          &trans     &kp LA(LEFT)     &kp LA(DOWN)      &kp LA(UP)      &kp LA(RIGHT)  &none
+		&trans       &trans     &trans     &trans     &trans     &trans             &trans     &kp LC(LEFT)     &kp LC(DOWN)      &kp LC(UP)      &kp LC(RIGHT)  &trans
+		&trans       &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &trans             &trans     &kp LEFT         &kp DOWN          &kp UP          &kp RIGHT      &trans
+		&trans       &kp LC(Z)  &kp LC(X)  &kp LC(C)  &trans     &kp LC(V)          &trans     &kp LA(LEFT)     &kp LA(DOWN)      &kp LA(UP)      &kp LA(RIGHT)  &trans
 		                                  &trans     &trans     &trans             &trans     &trans           &trans
 		>;
 	};
 	mse_layer {
 		bindings = <
-		&none       &trans     &trans     &trans     &trans     &trans             &trans     &trans     &trans     &trans     &trans   &none
-		&none       &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &trans             &trans     &kp RSHFT  &kp RCTRL  &kp LALT   &kp RGUI &none
-		&none       &trans     &trans     &trans     &trans     &trans             &trans     &trans     &trans     &trans     &trans   &none
+		&trans       &trans     &trans     &trans     &trans     &trans             &trans     &trans     &trans     &trans     &trans   &trans
+		&trans       &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &trans             &trans     &kp RSHFT  &kp RCTRL  &kp LALT   &kp RGUI &trans
+		&trans       &trans     &trans     &trans     &trans     &trans             &trans     &trans     &trans     &trans     &trans   &trans
 		                                  &trans     &trans     &trans             &trans     &trans     &trans
 		>;
 	};
 	med_layer {
 	bindings = <
-		&none       &trans     &trans     &trans     &trans     &trans             &kp C_VOL_UP &kp C_RW   &kp K_STOP2 &kp C_FF   &kp C_BRI_UP  &none
-		&none       &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &trans             &kp K_MUTE   &kp C_PREV &kp C_PP    &kp C_NEXT &trans        &none
-		&none       &trans     &trans     &trans     &trans     &trans             &kp C_VOL_DN &trans     &trans      &trans     &kp C_BRI_DN  &none
+		&trans       &trans     &trans     &trans     &trans     &trans             &kp C_VOL_UP &kp C_RW   &kp K_STOP2 &kp C_FF   &kp C_BRI_UP  &trans
+		&trans       &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &trans             &kp K_MUTE   &kp C_PREV &kp C_PP    &kp C_NEXT &trans        &trans
+		&trans       &trans     &trans     &trans     &trans     &trans             &kp C_VOL_DN &trans     &trans      &trans     &kp C_BRI_DN  &trans
 		                                  &trans     &trans     &trans             &trans       &trans     &trans
 		>;
 	};
