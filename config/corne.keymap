@@ -16,6 +16,25 @@
 #define MSE 5
 #define MED 6
 
+&lt {
+	tapping-term-ms = <300>;
+	quick_tap_ms = <200>;
+	flavor = "hold-preferred";
+	};
+
+/ {
+
+combos {
+	compatible = "zmk,combos";
+	combo_caps {
+		timeout-ms = <50>;
+		key-positions = <02 03 04>;
+		bindings = <&kp CAPS>;
+		layers = <DEFAULT>;
+		};
+	};
+
+behaviors {
 	hmi: homerow_mods_index {
 		compatible = "zmk,behavior-hold-tap";
 		label = "HOMEROW_MODS_INDEX";
@@ -34,7 +53,8 @@
 		flavor = "tap-preferred";
 		bindings = <&kp>, <&kp>;
 		};
-/ {
+	};
+
         keymap {
                 compatible = "zmk,keymap";
 
