@@ -28,8 +28,14 @@ combos {
 	compatible = "zmk,combos";
 	combo_caps {
 		timeout-ms = <50>;
-		key-positions = <02 03 04>;
+		key-positions = <02 04>;
 		bindings = <&kp CAPS>;
+		layers = <DEFAULT>;
+		};
+	combo_wordcaps {
+		timeout-ms = <50>;
+		key-positions = <03 04>;
+		bindings+ = <&caps_word>;
 		layers = <DEFAULT>;
 		};
 	};
