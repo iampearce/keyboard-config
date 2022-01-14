@@ -22,14 +22,24 @@
 	flavor = "hold-preferred";
 	};
 
+&caps_word {
+    continue-list = <UNDERSCORE MINUS>;
+	};
+
 / {
 
 combos {
 	compatible = "zmk,combos";
 	combo_caps {
 		timeout-ms = <50>;
-		key-positions = <02 03 04>;
+		key-positions = <02 04>;
 		bindings = <&kp CAPS>;
+		layers = <DEFAULT>;
+		};
+	combo_wordcaps {
+		timeout-ms = <50>;
+		key-positions = <03 04>;
+		bindings+ = <&caps_word>;
 		layers = <DEFAULT>;
 		};
 	};
@@ -53,6 +63,15 @@ behaviors {
 		flavor = "tap-preferred";
 		bindings = <&kp>, <&kp>;
 		};
+	hml: homerow_mods_long {
+		compatible = "zmk,behavior-hold-tap";
+		label = "HOMEROW_MODS_RING";
+		#binding-cells = <2>;
+		tapping-term-ms = <300>;
+		quick_tap_ms = <0>;
+		flavor = "tap-preferred";
+		bindings = <&kp>, <&kp>;
+		};
 	};
 
         keymap {
@@ -63,7 +82,7 @@ default_layer {
 		&trans       &kp Q       &kp W       &kp F        &kp P        &kp B           &kp J     &kp L        &kp U            &kp Y          &hmr DQT SQT       &trans
 		&trans       &hmr LGUI A &hmr LALT R &hmi LCTRL S &hmi LSHFT T &kp G           &kp M     &hmi RSHFT N &hmi RCTRL E     &hmr LALT I    &hmr RGUI O        &trans
 		&trans       &kp Z       &kp X       &kp C        &kp D        &kp V           &kp K     &kp H        &hmi EXCL COMMA  &hmr QMARK DOT &hmr COLON SEMI    &trans
-		                        &lt MSE TAB   &lt FUN RET  &lt NUM SPACE             &lt SYM BSPC   &lt MED ESC  &lt NAV DEL
+		                        &lt FUN TAB   &lt MSE RET  &lt NUM SPACE             &lt SYM BSPC   &lt NAV DEL   &lt MED ESC
 		>;
 	};
 	num_layer {
@@ -76,10 +95,10 @@ default_layer {
 	};
 	sym_layer {
 		bindings = <
-		&trans       &reset     &trans     &trans     &trans     &trans             &kp PLUS   &hmi LBRC LBKT &hmi CARET STAR &hmr RBRC RBKT &kp AT      &trans
+		&trans       &reset     &trans     &trans     &trans     &trans             &kp PLUS   &hmi LBRC LBKT &hml CARET STAR &hmr RBRC RBKT &kp AT      &trans
 		&trans       &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &trans             &kp UNDER  &kp LPAR       &kp EQUAL       &kp RPAR       &kp DLLR    &trans
-		&trans       &trans     &trans     &trans     &trans     &trans             &kp MINUS  &kp LT         &hmi BSLH FSLH  &kp GT         &kp AMPS    &trans
-		                                  &trans     &trans     &trans             &trans     &trans         &trans
+		&trans       &trans     &trans     &trans     &trans     &trans             &kp MINUS  &kp LT         &hml BSLH FSLH  &kp GT         &kp AMPS    &trans
+		                                   &trans     &trans     &trans             &trans     &trans         &trans
 		>;
 	};
 	fun_layer {
@@ -87,7 +106,7 @@ default_layer {
 		&trans       &kp F12    &kp F7     &kp F8     &kp F9     &trans             &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4     &trans
 		&trans       &kp F11    &kp F4     &kp F5     &kp F6     &trans             &trans       &kp RSHFT    &kp RCTRL    &kp LALT     &kp RGUI         &trans
 		&trans       &kp F10    &kp F1     &kp F2     &kp F3     &trans             &trans       &trans       &trans       &trans       &trans           &trans
-		                                  &trans     &trans     &trans             &trans       &trans       &bt BT_CLR
+		                                   &trans     &trans     &trans             &out OUT_USB       &out OUT_BLE       &bt BT_CLR
 		>;
 	};
 	nav_layer {
@@ -95,15 +114,15 @@ default_layer {
 		&trans       &trans     &trans     &trans     &trans     &trans             &trans     &kp LC(LEFT)     &kp LC(DOWN)      &kp LC(UP)      &kp LC(RIGHT)  &trans
 		&trans       &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &trans             &trans     &kp LEFT         &kp DOWN          &kp UP          &kp RIGHT      &trans
 		&trans       &kp LC(Z)  &kp LC(X)  &kp LC(C)  &trans     &kp LC(V)          &trans     &kp LA(LEFT)     &kp LA(DOWN)      &kp LA(UP)      &kp LA(RIGHT)  &trans
-		                                  &trans     &trans     &trans             &trans     &trans           &trans
+		                                   &trans     &trans     &trans             &trans     &trans           &trans
 		>;
 	};
 	mse_layer {
 		bindings = <
-		&trans       &trans     &trans     &trans     &trans     &trans             &trans     &trans     &trans     &trans     &trans   &trans
-		&trans       &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &trans             &trans     &kp RSHFT  &kp RCTRL  &kp LALT   &kp RGUI &trans
-		&trans       &trans     &trans     &trans     &trans     &trans             &trans     &trans     &trans     &trans     &trans   &trans
-		                                  &trans     &trans     &trans             &trans     &trans     &trans
+		&trans   &kp LC(LEFT)   &kp LC(UP)    &kp LC(DOWN)   &kp LC(RIGHT)   &trans             &trans     &trans     &trans     &trans     &trans   &trans
+		&trans   &kp LEFT       &kp UP        &kp DOWN       &kp RIGHT       &trans             &trans     &kp RSHFT  &kp RCTRL  &kp LALT   &kp RGUI &trans
+		&trans   &kp LA(LEFT)   &kp LA(UP)    &kp LA(DOWN)   &kp LA(RIGHT)   &trans             &trans     &trans     &trans     &trans     &trans   &trans
+								&trans     &trans     &trans             &trans     &trans     &trans
 		>;
 	};
 	med_layer {
