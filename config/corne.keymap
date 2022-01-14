@@ -91,10 +91,10 @@ default_layer {
 	};
 	sym_layer {
 		bindings = <
-		&trans       &reset     &trans     &trans     &trans     &trans             &kp PLUS   &hmi LBRC LBKT &hmi CARET STAR &hmr RBRC RBKT &kp AT      &trans
+		&trans       &reset     &trans     &trans     &trans     &trans             &kp PLUS   &hmi LBRC LBKT &hml CARET STAR &hmr RBRC RBKT &kp AT      &trans
 		&trans       &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &trans             &kp UNDER  &kp LPAR       &kp EQUAL       &kp RPAR       &kp DLLR    &trans
-		&trans       &trans     &trans     &trans     &trans     &trans             &kp MINUS  &kp LT         &hmi BSLH FSLH  &kp GT         &kp AMPS    &trans
-		                                  &trans     &trans     &trans             &trans     &trans         &trans
+		&trans       &trans     &trans     &trans     &trans     &trans             &kp MINUS  &kp LT         &hml BSLH FSLH  &kp GT         &kp AMPS    &trans
+		                                   &trans     &trans     &trans             &trans     &trans         &trans
 		>;
 	};
 	fun_layer {
