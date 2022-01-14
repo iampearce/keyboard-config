@@ -36,12 +36,6 @@ combos {
 		bindings = <&kp CAPS>;
 		layers = <DEFAULT>;
 		};
-	combo_wordcaps {
-		timeout-ms = <50>;
-		key-positions = <03 04>;
-		bindings+ = <&caps_word>;
-		layers = <DEFAULT>;
-		};
 	};
 
 behaviors {
