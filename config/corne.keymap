@@ -109,10 +109,10 @@ default_layer {
 	};
 	mse_layer {
 		bindings = <
-		&trans       &trans     &trans     &trans     &trans     &trans             &trans     &trans     &trans     &trans     &trans   &trans
-		&trans       &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &trans             &trans     &kp RSHFT  &kp RCTRL  &kp LALT   &kp RGUI &trans
-		&trans       &trans     &trans     &trans     &trans     &trans             &trans     &trans     &trans     &trans     &trans   &trans
-		                                  &trans     &trans     &trans             &trans     &trans     &trans
+		&trans   &kp LC(LEFT)   &kp LC(UP)    &kp LC(DOWN)   &kp LC(RIGHT)   &trans             &trans     &trans     &trans     &trans     &trans   &trans
+		&trans   &kp LEFT       &kp UP        &kp DOWN       &kp RIGHT       &trans             &trans     &kp RSHFT  &kp RCTRL  &kp LALT   &kp RGUI &trans
+		&trans   &kp LA(LEFT)   &kp LA(UP)    &kp LA(DOWN)   &kp LA(RIGHT)   &trans             &trans     &trans     &trans     &trans     &trans   &trans
+								&trans     &trans     &trans             &trans     &trans     &trans
 		>;
 	};
 	med_layer {
