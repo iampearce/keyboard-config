@@ -28,7 +28,7 @@ combos {
 	compatible = "zmk,combos";
 	combo_caps {
 		timeout-ms = <50>;
-		key-positions = <02 03 04>;
+		key-positions = <02 04>;
 		bindings = <&kp CAPS>;
 		layers = <DEFAULT>;
 		};
@@ -53,6 +53,15 @@ behaviors {
 		flavor = "tap-preferred";
 		bindings = <&kp>, <&kp>;
 		};
+	hml: homerow_mods_long {
+		compatible = "zmk,behavior-hold-tap";
+		label = "HOMEROW_MODS_LONG";
+		#binding-cells = <2>;
+		tapping-term-ms = <300>;
+		quick_tap_ms = <0>;
+		flavor = "tap-preferred";
+		bindings = <&kp>, <&kp>;
+		};
 	};
 
         keymap {
@@ -60,59 +69,59 @@ behaviors {
 
 default_layer {
 		bindings = <
-		&trans       &kp Q       &kp W       &kp F        &kp P        &kp B           &kp J     &kp L        &kp U            &kp Y          &hmr DQT SQT       &trans
-		&trans       &hmr LGUI A &hmr LALT R &hmi LCTRL S &hmi LSHFT T &kp G           &kp M     &hmi RSHFT N &hmi RCTRL E     &hmr LALT I    &hmr RGUI O        &trans
-		&trans       &kp Z       &kp X       &kp C        &kp D        &kp V           &kp K     &kp H        &hmi EXCL COMMA  &hmr QMARK DOT &hmr COLON SEMI    &trans
-		                        &lt MSE TAB   &lt FUN RET  &lt NUM SPACE             &lt SYM BSPC   &lt MED ESC  &lt NAV DEL
+		&none       &kp Q       &kp W       &kp E        &kp R        &kp T           &kp Y     &kp U        &kp I            &kp O          &kp P       &none
+		&none       &hmr LGUI A &hmr LALT S &hmi LCTRL D &hmi LSHFT F &kp G           &kp H     &hmi RSHFT J &hmi RCTRL K     &hmr LALT L    &hmr RGUI SQT       &none
+		&none       &kp Z       &kp X       &kp C        &kp V        &kp B           &kp N     &kp M        &hmi EXCL COMMA  &hmr QMARK DOT &hmr COLON SEMI    &none
+		                       &lt FUN TAB   &lt SYM RET  &lt NUM SPACE             &lt NAV BSPC   &lt MSE DEL   &lt MED ESC
 		>;
 	};
 	num_layer {
 		bindings = <
-		&trans       &hmr GRAVE TILDE &kp N7    &kp N8    &kp N9    &kp COMMA        &trans     &trans     &trans    &trans   &reset     &trans
-		&trans       &kp NON_US_HASH  &kp N4    &kp N5    &kp N6    &kp N0           &trans     &kp RSHFT  &kp RCTRL &kp LALT &kp RGUI   &trans
-		&trans       &hmr HASH PRCNT  &kp N1    &kp N2    &kp N3    &kp DOT          &trans     &trans     &trans    &trans   &trans     &trans
-		                                       &trans    &trans    &trans           &trans     &trans     &trans
+		&none		&kp N1		&kp N2		&kp N3		&kp N4		&kp N5				&kp N6		&kp N7		&kp N8		&kp N9		&kp N0		&none
+		&none		&kp LGUI	&kp LALT	&kp LCTRL	&kp LSHFT	&trans				&kp PLUS	&kp N4		&kp N5 		&kp N6		&kp PIPE	&none
+		&none		&trans		&trans		&trans		&trans		&trans				&kp EQUAL	&kp N1		&kp N2		&kp N3		&trans		&none
+											&trans		&trans		&trans				&kp N0		&trans		&trans
 		>;
 	};
 	sym_layer {
 		bindings = <
-		&trans       &reset     &trans     &trans     &trans     &trans             &kp PLUS   &hmi LBRC LBKT &hmi CARET STAR &hmr RBRC RBKT &kp AT      &trans
-		&trans       &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &trans             &kp UNDER  &kp LPAR       &kp EQUAL       &kp RPAR       &kp DLLR    &trans
-		&trans       &trans     &trans     &trans     &trans     &trans             &kp MINUS  &kp LT         &hmi BSLH FSLH  &kp GT         &kp AMPS    &trans
-		                                  &trans     &trans     &trans             &trans     &trans         &trans
+		&none		&kp EXCL	&kp AT		&kp NON_US_HASH	&kp DLLR	&kp PRCNT			&kp CARET		&kp AMPS		&kp STAR		&kp LPAR		&kp RPAR		&none
+		&none		&kp LGUI	&kp LALT	&kp LCTRL		&kp LSHFT	&trans				&kp MINUS		&kp DLLR		&kp PRCNT		&kp CARET		&kp GRAVE			&none
+		&none		&trans		&trans		&trans			&trans		&trans				&kp UNDER		&kp EXCL		&kp AT			&kp NON_US_HASH	&kp TILDE		&none
+											&trans			&trans		&trans				&hml FSLH BSLH	&hml LBRC LBKT	&hml RBRC RBKT
 		>;
 	};
 	fun_layer {
 		bindings = <
-		&trans       &kp F12    &kp F7     &kp F8     &kp F9     &trans             &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4     &trans
-		&trans       &kp F11    &kp F4     &kp F5     &kp F6     &trans             &trans       &kp RSHFT    &kp RCTRL    &kp LALT     &kp RGUI         &trans
-		&trans       &kp F10    &kp F1     &kp F2     &kp F3     &trans             &trans       &trans       &trans       &trans       &trans           &trans
-		                                  &trans     &trans     &trans             &trans       &trans       &bt BT_CLR
+		&none       &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4		&trans		&kp F7		&kp F8		&kp F9		&kp F12		&none
+		&none       &kp LGUI	&kp LALT	&kp LCTRL		&kp LSHFT	&trans				&trans		&kp F4		&kp F5		&kp F6		&kp F11		&none
+		&none       &trans		&trans		&trans			&trans		&trans				&trans		&kp F1		&kp F2		&kp F3		&kp F10		&none
+											&trans			&trans		&bt BT_CLR			&trans		&trans		&trans
 		>;
 	};
 	nav_layer {
 		bindings = <
-		&trans       &trans     &trans     &trans     &trans     &trans             &trans     &kp LC(LEFT)     &kp LC(DOWN)      &kp LC(UP)      &kp LC(RIGHT)  &trans
-		&trans       &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &trans             &trans     &kp LEFT         &kp DOWN          &kp UP          &kp RIGHT      &trans
-		&trans       &kp LC(Z)  &kp LC(X)  &kp LC(C)  &trans     &kp LC(V)          &trans     &kp LA(LEFT)     &kp LA(DOWN)      &kp LA(UP)      &kp LA(RIGHT)  &trans
-		                                  &trans     &trans     &trans             &trans     &trans           &trans
+		&none       &trans		&kp LC(LEFT)	&kp UP			&kp LC(RIGHT)	&trans					&trans		&trans		&trans		&trans		&trans		&none
+		&none       &trans		&kp LEFT		&kp DOWN		&kp RIGHT		&trans					&trans		&kp RSHFT	&kp RCTRL	&kp LALT	&kp RGUI	&none
+		&none       &trans		&kp LA(LEFT)	&kp PGDN		&kp LA(RIGHT)	&trans					&trans		&trans		&trans		&trans		&trans		&none
+												&kp LC(X)		&kp LC(C)		&kp LC(V)				&trans		&trans		&trans
 		>;
 	};
 	mse_layer {
 		bindings = <
-		&trans       &trans     &trans     &trans     &trans     &trans             &trans     &trans     &trans     &trans     &trans   &trans
-		&trans       &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &trans             &trans     &kp RSHFT  &kp RCTRL  &kp LALT   &kp RGUI &trans
-		&trans       &trans     &trans     &trans     &trans     &trans             &trans     &trans     &trans     &trans     &trans   &trans
-		                                  &trans     &trans     &trans             &trans     &trans     &trans
+		&none		&trans		&trans		&trans			&trans		&trans					&trans		&trans		&trans		&trans		&trans		&none
+		&none       &kp LGUI	&kp LALT	&kp LCTRL		&kp LSHFT	&trans					&trans		&kp RSHFT	&kp RCTRL	&kp LALT	&kp RGUI	&none
+		&none		&trans		&trans		&trans			&trans		&trans					&trans		&trans		&trans		&trans		&trans		&none
+												&trans		&trans		&trans					&trans		&trans		&trans
 		>;
 	};
 	med_layer {
 	bindings = <
-		&trans       &trans     &trans     &trans     &trans     &trans             &kp C_VOL_UP &kp C_RW   &kp K_STOP2 &kp C_FF   &kp C_BRI_UP  &trans
-		&trans       &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &trans             &kp K_MUTE   &kp C_PREV &kp C_PP    &kp C_NEXT &trans        &trans
-		&trans       &trans     &trans     &trans     &trans     &trans             &kp C_VOL_DN &trans     &trans      &trans     &kp C_BRI_DN  &trans
+		&none       &trans     &trans     &trans     &trans     &trans             &kp C_VOL_UP &kp C_RW   &kp K_STOP2 &kp C_FF   &kp C_BRI_UP  &none
+		&none       &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &trans             &kp K_MUTE   &kp C_PREV &kp C_PP    &kp C_NEXT &trans        &none
+		&none       &trans     &trans     &trans     &trans     &trans             &kp C_VOL_DN &trans     &trans      &trans     &kp C_BRI_DN  &none
 		                                  &trans     &trans     &trans             &trans       &trans     &trans
 		>;
 	};
 	};
-};
+	};
