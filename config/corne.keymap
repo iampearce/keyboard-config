@@ -88,7 +88,7 @@ default_layer {
 		&none		&kp EXCL	&kp AT		&kp NON_US_HASH	&kp DLLR	&kp PRCNT			&kp CARET		&kp AMPS		&kp STAR		&kp LPAR		&kp RPAR		&none
 		&none		&kp LGUI	&kp LALT	&kp LCTRL		&kp LSHFT	&trans				&kp MINUS		&kp DLLR		&kp PRCNT		&kp CARET		&kp GRAVE			&none
 		&none		&trans		&trans		&trans			&trans		&trans				&kp UNDER		&kp EXCL		&kp AT			&kp NON_US_HASH	&kp TILDE		&none
-											&trans			&trans		&trans				&hml FSLH BSLH	&hml LBRC LBKT	&hml RBRC RBKT
+											&trans			&trans		&trans				&hml BSLH FSLH	&hml LBRC LBKT	&hml RBRC RBKT
 		>;
 	};
 	fun_layer {
